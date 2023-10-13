@@ -8,12 +8,13 @@ import drizzle_icon from '../assets/drizzle.png'
 import rain_icon from '../assets/rain.png'
 import snow_icon from '../assets/snow.png'
 import wind_icon from '../assets/wind.png'
-import humididy_icon from '../assets/humidity.png'
+import humidity_icon from '../assets/humidity.png'
 
 
 const WeatherApp = () => {
 
-    let api_key = "77412fdb736df4fec3c7ea09368eca68";
+    let api_key ="77412fdb736df4fec3c7ea09368eca68";
+    // process.env.OPEN_WEATHER_MAP_API_KEY;
 
     const [wicon , setWicon] = useState(cloud_icon);
 
@@ -33,7 +34,7 @@ const WeatherApp = () => {
         const temperature = document.getElementsByClassName("weather-temp");
         const location = document.getElementsByClassName("weather-location");
 
-        humidity[0].innerHTML = data.main.humidity+" %";
+        humidity[0].innerHTML = data.main.humidity +" %";
         wind[0].innerHTML = data.wind.speed+" km/h";
         temperature[0].innerHTML = data.main.temp+" C";
         location[0].innerHTML = data.name;
@@ -75,21 +76,21 @@ const WeatherApp = () => {
         <div className="weather-image">
             <img src={wicon} alt="" />
         </div>
-        <div className="weather-temp">24C</div>
+        <div className="weather-temp">24°C</div>
         <div className="weather-location">London</div>
         <div className="data-container">
             <div className="element">
-                <img src={humididy_icon} alt="" className="icon" />
+                <img src={humidity_icon} alt="" className="icon" />
                 <div className="data">
-                    <div className="humidity-percent">234</div>
-                    <div className="text">Huidid</div>
+                    <div className="humidity-percent">54 %</div>
+                    <div className="text">Humidity</div>
                 </div>
             </div>
             <div className="element">
                 <img src={wind_icon} alt="" className="icon" />
                 <div className="data">
-                    <div className="wind-rate">234</div>
-                    <div className="text">Wind Sppd</div>
+                    <div className="wind-rate">4</div>
+                    <div className="text">Wind Speed</div>
                 </div>
             </div>
         </div>
