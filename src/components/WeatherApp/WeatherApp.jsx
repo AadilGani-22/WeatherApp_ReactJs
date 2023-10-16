@@ -13,7 +13,7 @@ import humidity_icon from '../assets/humidity.png'
 
 const WeatherApp = () => {
 
-    let api_key =process.env.REACT_APP_WEATHER_API;
+    // let api_key =process.env.REACT_APP_WEATHER_API;
 
     const [wicon , setWicon] = useState(cloud_icon);
 
@@ -22,7 +22,7 @@ const WeatherApp = () => {
         if(element[0].value ===""){
             return 0;
         }
-        let url = `https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=Metric&appid=${api_key}`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=Metric&appid=${process.env.REACT_APP_WEATHER_API}`;
 
         let response= await fetch(url);
         let data = await response.json();
